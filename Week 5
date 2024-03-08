@@ -1,0 +1,25 @@
+//Original code from Arduino's example "AnalogReadSerial"
+
+void setup() {
+  Serial.begin(9600); //Set up serial communication
+}
+
+void loop() {
+  int sensorValue = analogRead(A0); 
+  
+  //Dark
+  if (sensorValue < 550){ 
+     Serial.println("0");
+     delay(100);
+     
+  //Normal   
+  } else if (sensorValue > 550 && sensorValue < 850){
+     Serial.println("1");
+     delay(100);
+     
+  //Bright   
+  } else if (sensorValue > 850){
+     Serial.println("2");
+     delay(100);
+  }
+}
