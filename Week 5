@@ -6,15 +6,17 @@ void setup() {
 
 void loop() {
   int sensorValue = analogRead(A0); 
+  //Serial.println(sensorValue);
+  //delay(1000);
   
   //Dark
-  if (sensorValue < 550){ 
-     Serial.println("0");
+  if (sensorValue < 600){ 
+     Serial.println("1");
      delay(100);
      
   //Normal   
-  } else if (sensorValue > 550 && sensorValue < 850){
-     Serial.println("1");
+  } else if (sensorValue > 600 && sensorValue < 850){
+     Serial.println("0");
      delay(100);
      
   //Bright   
